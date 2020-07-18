@@ -37,7 +37,7 @@ if (process.env.SECURE) {
         key: fs.readFileSync(process.env.CERT_KEY),
         cert: fs.readFileSync(process.env.CERT),
     }, app)
-    https.listen(port, () => console.log(`Listening at http://localhost:${port}`))
+    .listen(port, () => console.log(`Listening at http://localhost:${port}`))
 } else {
     app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
 }
