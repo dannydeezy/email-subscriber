@@ -27,13 +27,17 @@ app.post('/subscribe/dannydiekroeger', async (req, res) => {
     }
 })
 
-app.get('/danny-profile.jpg', (req, res) => {
-    res.sendFile(path.join(__dirname, './client', 'danny-profile.jpg'))
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, './client', 'nothing-to-see-here.gif'))
 })
 
-app.get('/styles.css', (req, res) => {
-    res.sendFile(path.join(__dirname, './client', 'styles.css'))
+app.get('/subscribe', (req, res) => {
+    res.sendFile(path.join(__dirname, './client', 'nothing-to-see-here.gif'))
 })
+
+serveClientFile('danny-profile.jpg')
+serveClientFile('styles.css')
+serveClientFile('nothing-to-see-here.gif')
 
 if (process.env.SECURE) {
     https.createServer({
@@ -45,7 +49,11 @@ if (process.env.SECURE) {
     app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
 }
 
-
+function serveClientFile(filename) {
+    app.get(`/${filename}`, (req, res) => {
+        res.sendFile(path.join(__dirname, './client', filename))
+    })
+}
 
 function validateEmail(email) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
