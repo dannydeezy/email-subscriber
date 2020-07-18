@@ -32,7 +32,7 @@ app.get('/styles.css', (req, res) => {
     res.sendFile(path.join(__dirname, './client', 'styles.css'))
 })
 
-app.get('/styles.css', (req, res) => {
+app.get('/favicon.ico', (req, res) => {
     res.sendFile(path.join(__dirname, './client', 'favicon.ico'))
 })
 
