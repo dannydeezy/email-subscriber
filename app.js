@@ -4,8 +4,11 @@ const app = express()
 const fs = require('fs')
 const path = require('path');
 const https = require('https');
+const favicon = require('serve-favicon')
 const port = process.env.PORT || 3000
+
 app.use(express.urlencoded());
+app.use(favicon(path.join(__dirname, './client', 'favicon.ico')))
 
 app.get('/subscribe/dannydiekroeger', (req, res) => {
     res.sendFile(path.join(__dirname, './client', 'signup.html'))
@@ -30,10 +33,6 @@ app.get('/danny-profile.jpg', (req, res) => {
 
 app.get('/styles.css', (req, res) => {
     res.sendFile(path.join(__dirname, './client', 'styles.css'))
-})
-
-app.get('/favicon.ico', (req, res) => {
-    res.sendFile(path.join(__dirname, './client', 'favicon.ico'))
 })
 
 if (process.env.SECURE) {
