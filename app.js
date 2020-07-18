@@ -32,6 +32,10 @@ app.get('/styles.css', (req, res) => {
     res.sendFile(path.join(__dirname, './client', 'styles.css'))
 })
 
+app.get('/styles.css', (req, res) => {
+    res.sendFile(path.join(__dirname, './client', 'favicon.ico'))
+})
+
 if (process.env.SECURE) {
     https.createServer({
         key: fs.readFileSync(process.env.CERT_KEY),
