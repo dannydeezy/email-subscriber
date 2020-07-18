@@ -24,8 +24,8 @@ app.post('/subscribe/dannydiekroeger', async (req, res) => {
     }
 })
 
-app.get('/baby.gif', (req, res) => {
-    res.sendFile(path.join(__dirname, './client', 'baby.gif'))
+app.get('/danny-profile.jpg', (req, res) => {
+    res.sendFile(path.join(__dirname, './client', 'danny-profile.jpg'))
 })
 
 app.get('/styles.css', (req, res) => {
