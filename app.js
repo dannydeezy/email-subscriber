@@ -37,7 +37,6 @@ app.get('/subscribe', (req, res) => {
 
 serveClientFile('danny-profile.jpg')
 serveClientFile('styles.css')
-serveClientFile('nothing-to-see-here.gif')
 
 if (process.env.SECURE) {
     https.createServer({
