@@ -1,0 +1,45 @@
+body {
+    background-color:#eeeeee;
+    text-align:center;
+    font-family:Palatino, sans-serif;
+    color: black;
+}
+h1 {
+    margin-top:10%;
+}
+#info {
+    margin-top:50px;
+    font-size:18px;
+}
+form {
+    margin-top:50px;
+}
+.submit {
+    font-size:18px;
+    text-align:center;
+    border-radius:10px;
+    font-family: Palatino, sans-serif
+}
+#email {
+    width:350px;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+#button {
+    margin-top:25px;
+    padding:10px;
+    padding-left:20px;
+    padding-right:20px;
+    color:#eeeeee;
+    background:darkgreen;
+    border:none;
+}
+#button:hover {
+    cursor:pointer;
+}
+#subscribeTo {
+    display: none;
+}
+ #goback {
+     font-size:12pt;
+ }
