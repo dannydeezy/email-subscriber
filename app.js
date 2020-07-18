@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const fs = require('fs')
@@ -33,8 +34,8 @@ app.get('/styles.css', (req, res) => {
 
 if (process.env.SECURE) {
     https.createServer({
-        key: fs.readFileSync('./secret/key.pem'),
-        cert: fs.readFileSync('./secret/cert.pem'),
+        key: fs.readFileSync(process.env.CERT_KEY),
+        cert: fs.readFileSync(process.env.CERT),
     }, app)
 } else {
     app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
